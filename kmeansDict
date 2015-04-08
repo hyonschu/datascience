@@ -1,0 +1,39 @@
+import sklearn.feature_extraction as fe
+import sklearn.cluster as cl
+import collections
+
+
+alldatamatr = []
+rangestart = 100 
+rangestop = 500
+step = 100
+clustermin = 2
+clustermax = 10
+xfoldvalidations = 10
+
+for no_features in range(rangestart,rangestop, step):
+  datamatr = []
+  tfidf = fe.text.TfidfVectorizer(max_features=nofeatures, stop_words='english')
+  for noclusters in range(clustermin, clustermax):
+    tmplist = [noclusters]
+    for validation in range(xfoldvalidations):
+      cl.KMeans(n_clusters=noclusters)
+      bbb = kmeans.fit_predict(aaa)
+      tmplist.append(sorted(collections.COunter(bbb).values()))
+    datamatr.append(tmplist)
+    print 'completed cluster:' noclusters
+  alldatamatr.append(datamatr)
+  print no_features, 'completed'
+  print "+-------------------+
+alltest = {}
+counter = rangerstart
+for j in range(len(alldatamatr)):
+  one = {}
+  for i in alldatamatr[j]:
+    one[i[0]] = pd.DataFrame(i[1:])
+  alltest[counter] = one
+  counter += step
+results = []
+for k in range(100,600,100):
+  for j in alltest[i]:
+    results.append([j, i, mean[i][j].std()), i])
