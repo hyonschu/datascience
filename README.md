@@ -1,2 +1,2 @@
 # datascience
-reusable data science scripts
+reusable data science scripts using python!
